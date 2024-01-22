@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Fira sans', sans-serif;
+    text-decoration: none;    
+    list-style: none;
+    
+}
+
+body{
+    background: #1B1B1D;    
+}
+
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    width: 100%;
+    z-index: 1;
+}
+
+header .navbar{
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between; 
+    max-width: 1280px; 
+    margin: 0 auto;
+}
+
+.menu-links li{
+    display: inline-block;    
+}
+
+.menu-links li a{
+    color: #fff;
+    padding: 0 20px;
+    font-size: 1 rem;
+    font-weight: 500;
+}
+
+.hero-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-image: url(images/hero-img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 0 20px;  
+    height: 100vh;  
+}
+
+.hero-section .content {
+    max-width: 1280px;
+    margin: 0 auto 40px;
+    width: 100%;
+}
+
+.content h1{
+    color: white;
+    font-weight: 500;
+    font-size: 3rem;
+    max-width: 680px;
+}
+
+.search-form {
+    height: 48px;
+    max-width: 680px;   
+    margin-top: 30px;
+    display: flex;
+}
+
+.search-form input{
+    height: 100%;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    
+}
+
+.search-form button{
+    width: 60px;
+    height: 100%;
+    color: #fff;
+    background: #1dbf73;
+    border-radius: 0 4px 4px 0;
+    transition: 0.2s ease;
+    border: none;
+    cursor: pointer;    
+}
+
+.popular-tags{
+    display: flex;  
+    margin: 20px 0; 
+    gap: 25px;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.popular-tags .tags {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.popular-tags .tags li a{
+    color: #fff;
+    border: 1px solid white;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 1.1rem;    
+    font-weight: 500;
+}
+
+.popular-tags .tags li a:hover{
+    color: #1B1B1D;
+    background: #fff;
+}
+
+#hamburger-btn{
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 1.7rem;    
+}
+
+#close-menu-btn{
+    position: absolute;
+    display: none;
+    color: #000;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+@media screen and (max-width: 900px) {
+    header.show-mobile-menu::before{
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        backdrop-filter: blur(5px);
+    }
+    .navbar .menu-links {
+        height: 100vh;
+        max-width: 300px;
+        width: 100%;
+        background: #fff;
+        position: fixed;
+        left: -300px;
+        top: 0;
+        display: block;
+        padding: 75px 40px 0;
+        transition: left 0.2s ease;
+      }
+      header.show-mobile-menu .navbar .menu-links {
+        left: 0;
+      }
+      .navbar .menu-links li {
+        margin-bottom: 30px;
+      }
+      .navbar .menu-links li a {
+        color: #000;
+        font-size: 1.1rem;
+      }
+      .navbar .menu-links .join-btn a {
+        padding: 0;
+      }
+      .navbar .menu-links .join-btn a:hover {
+        color: #1dbf73;
+        background: none;
+      }
+      .navbar :is(#close-menu-btn, #hamburger-btn) {
+        display: block;
+      }
+      .hero-section {
+        background: none;
+      }
+      .hero-section .content {
+        margin: 0 auto 80px;
+      }
+      .hero-section .content :is(h1, .search-form) {
+        max-width: 100%;
+      }
+      .hero-section .content h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        line-height: 55px;
+      }
+      .hero-section .search-form {
+        display: block;
+        margin-top: 20px;
+      }
+      .hero-section .search-form input {
+        border-radius: 4px;
+      }
+      
+      .hero-section .search-form button {
+        margin-top: 10px;
+        border-radius: 4px;
+        width: 100%;
+      }
+      .hero-section .popular-tags {
+        display: none;
+      }
+    
+}
